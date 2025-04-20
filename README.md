@@ -24,3 +24,9 @@ This project creates an AI-powered virtual character for VRChat using:
 ```bash
 git clone https://github.com/MrBWC/vrc_ai.git
 cd vrc_ai
+pip install uv
+uv init
+
+then run 
+uv run main.py
+```

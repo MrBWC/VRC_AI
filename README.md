@@ -46,7 +46,7 @@ Virtual Audio Cable Setup: Ensure that Virtual Audio Cable is installed and prop
 1. Clone the project:
 
 ```bash
-git clone https://github.com/MrBWC/vrc_ai.git
+git clone https://github.com/MrBWC/VRC_AI.git
 cd vrc_ai
 ```
 

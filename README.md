@@ -51,7 +51,7 @@ Installs all dependencies (Whisper, Edge-TTS, Ollama client libraries, etc.) and
 ### `run.bat`  
 Launches the full AI assistant:  
 
-- Listens to your voice  
+- Listens to VRChat Users
 - Generates a response  
 - Sends voice output to VRChat  
 - Controls avatar movement (if applicable)  

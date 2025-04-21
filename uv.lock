@@ -850,6 +850,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f5/77/952ca71515f81919bd8a6a4a3f89a27b09e73880cebf90957eda8f2f8545/openai-whisper-20240930.tar.gz", hash = "sha256:b7178e9c1615576807a300024f4daa6353f7e1a815dac5e38c33f1ef055dd2d2", size = 800544 }
 
 [[package]]
+name = "openvr"
+version = "2.5.102"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/62/dd/cce68ef7aef4923eef7d25779319d6bb334bfa80e35a4223b5cc20a41cfa/openvr-2.5.102.tar.gz", hash = "sha256:50419862bb45174dc209847e46024d6e0753710d8cfad542dea21eef0d3df363", size = 1957776 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/49/103b27eacb297bb3c79142c9a597df130353ad803453f7785be3e38acc6a/openvr-2.5.102-py3-none-any.whl", hash = "sha256:fca9f39de7ddcd579cfa8431384e8c4d949d2782027bb0c513a1627240b1bb38", size = 1964691 },
+]
+
+[[package]]
 name = "propcache"
 version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -945,6 +954,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/1d/b2/31537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52c/pycparser-2.22.tar.gz", hash = "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6", size = 172736 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl", hash = "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc", size = 117552 },
+]
+
+[[package]]
+name = "python-osc"
+version = "1.9.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/6e/770a91c92e4e8db6213764fb78531dd26a4982000d9b325881f3599835e2/python_osc-1.9.3.tar.gz", hash = "sha256:bd0fa40def43ce509894709feb0e18f02192aca192c5e6c8fe2ba69e58f21794", size = 33328 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/57/04/01b3de6a7565cfc20f3bf4fce959b099ad30a08157865436d48cc02f6c08/python_osc-1.9.3-py3-none-any.whl", hash = "sha256:7def2075be72f07bae5a4c1a55cc7d907b247f4a5d910f3159ed30ac2b1f17cc", size = 43808 },
 ]
 
 [[package]]
@@ -1232,6 +1250,8 @@ dependencies = [
     { name = "edge-tts" },
     { name = "numpy" },
     { name = "openai-whisper" },
+    { name = "openvr" },
+    { name = "python-osc" },
     { name = "requests" },
     { name = "sounddevice" },
     { name = "soundfile" },
@@ -1242,6 +1262,8 @@ requires-dist = [
     { name = "edge-tts", specifier = ">=7.0.1" },
     { name = "numpy", specifier = ">=2.2.5" },
     { name = "openai-whisper", specifier = ">=20240930" },
+    { name = "openvr", specifier = ">=2.5.102" },
+    { name = "python-osc", specifier = ">=1.9.3" },
     { name = "requests", specifier = ">=2.32.3" },
     { name = "sounddevice", specifier = ">=0.5.1" },
     { name = "soundfile", specifier = ">=0.13.1" },

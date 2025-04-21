@@ -7,17 +7,10 @@ import soundfile as sf
 import edge_tts  # Text-to-Speech
 import atexit
 import os
-import testopenvr
 import time
 import json
 from datetime import datetime
-from movement_controller import (
-    trigger_osc_animation, 
-    simulate_head_movement, 
-    simulate_full_body_tracking, 
-    init_openvr, 
-    shutdown_openvr
-)
+from movement_controller import trigger_osc_animation, simulate_head_movement
 
 # Initialize Whisper model
 whisper_model = whisper.load_model("small")
@@ -25,9 +18,6 @@ whisper_model = whisper.load_model("small")
 # Audio recording settings
 samplerate = 16000
 duration = 5  # Seconds
-
-# Initialize OpenVR
-init_openvr()
 
 # Improved System Prompt
 system_prompt = """
@@ -197,4 +187,3 @@ if __name__ == "__main__":
     mistral_connection = "Mistral Model Loaded"  # Simulate model
     print("✅ Mistral model loaded.")
     main_loop()
-    shutdown_openvr()

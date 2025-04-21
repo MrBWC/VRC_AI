@@ -1,64 +1,39 @@
-import testopenvr
-import random
+import json
 import time
+import random
 
-# Initialize OpenVR
-def init_openvr():
-    try:
-        testopenvr.initialize()
-        print("✅ OpenVR Initialized")
-    except Exception as e:
-        print(f"⚠️ OpenVR init failed: {e}")
+# Dummy function for OSC Animation trigger
+def trigger_osc_animation(animation_name, value):
+    print(f"Triggering animation: {animation_name} with value: {value}")
 
-# Shutdown OpenVR
-def shutdown_openvr():
-    try:
-        testopenvr.shutdown()
-        print("🛑 OpenVR Shutdown")
-    except Exception as e:
-        print(f"⚠️ Shutdown error: {e}")
+# Dummy function to simulate head movement
+def simulate_head_movement(x_angle, y_angle):
+    print(f"Simulating head movement: x={x_angle}, y={y_angle}")
 
-# Trigger OSC animation (via VRChat or other clients that accept OSC)
-def trigger_osc_animation(animation_name, intensity=1.0):
-    try:
-        # Here you'd replace this with real OSC or OpenVR code.
-        print(f"🎬 Triggering animation: {animation_name} | Intensity: {intensity}")
-        # testopenvr.send_osc(animation_name, intensity)  # Placeholder for real implementation
-    except Exception as e:
-        print(f"⚠️ Animation trigger error: {e}")
+# Dummy function for full body tracking simulation (as placeholder)
+def simulate_full_body_tracking(x, y, z):
+    print(f"Simulating full body tracking: x={x}, y={y}, z={z}")
 
-# Simulate head movement for social behaviors
-def simulate_head_movement(yaw_degrees=0, pitch_degrees=0):
-    try:
-        print(f"🧠 Simulating head: yaw {yaw_degrees}°, pitch {pitch_degrees}°")
-        # Replace with real head movement control, e.g.:
-        # testopenvr.set_head_rotation(yaw_degrees, pitch_degrees)
-    except Exception as e:
-        print(f"⚠️ Head movement error: {e}")
+# This function can be extended for additional movement logic
+def get_movement_commands():
+    return {
+        "move": "Move",
+        "dance": "Dance",
+        "jump": "Jump",
+        "walk": "Walk",
+        "run": "Run",
+        "wave": "Wave",
+        "sit": "Sit",
+        "patrol": "Patrol"
+    }
 
-# Simulate full body pose updates (e.g., idle shift, lean, posture adjustments)
-def simulate_full_body_tracking():
-    try:
-        positions = {
-            "hip_x": random.uniform(-0.1, 0.1),
-            "hip_y": random.uniform(-0.05, 0.05),
-            "hip_z": random.uniform(-0.1, 0.1)
-        }
-        print(f"🦿 Simulating body shift: {positions}")
-        # Send positions to VR system here
-    except Exception as e:
-        print(f"⚠️ Body tracking simulation error: {e}")
-
-# Example idle loop (optional if called directly for testing)
-if __name__ == "__main__":
-    init_openvr()
-    try:
-        for _ in range(5):
-            simulate_full_body_tracking()
-            simulate_head_movement(random.uniform(-20, 20), random.uniform(-10, 10))
-            trigger_osc_animation("IdleLookAround", 1.0)
-            time.sleep(3)
-    except KeyboardInterrupt:
-        print("🔌 Interrupted.")
-    finally:
-        shutdown_openvr()
+# Function for idle behavior (patrolling or random movement)
+def behavior_tree_idle():
+    print("🤖 Idle: Patrolling...")
+    while True:
+        trigger_osc_animation("Patrol", 1)  # Looping patrol
+        time.sleep(5)  # Simulate walking for 5 sec
+        simulate_head_movement(random.uniform(-30, 30), random.uniform(-30, 30))
+        # Exit the loop if new voice command was recorded
+        if os.path.exists("input.wav"):
+            break

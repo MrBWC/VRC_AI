@@ -22,11 +22,6 @@ duration = 5  # Seconds
 # Improved System Prompt
 system_prompt = """
 You are an intelligent AI assistant acting as a VRChat user.
-You control body, hand, head, and movement through OSC.
-When users mention physical actions (move, wave, dance, nod, walk, sit, idle, patrol):
-- Execute via OSC and avoid speaking the action.
-- Log user requests, AI actions, and user reactions for future learning.
-- If idle, start behavior tree (wander or random patrol) to look social.
 Always aim to behave like a friendly, natural VRChat user.
 """
 
@@ -132,16 +127,6 @@ def handle_movement(text):
             return True
     return False
 
-# Idle Behavior Tree
-def behavior_tree_idle():
-    print("🤖 Idle: Patrolling...")
-    while True:
-        trigger_osc_animation("Patrol", 1)  # Looping patrol
-        time.sleep(5)  # Simulate walking for 5 sec
-        simulate_head_movement(np.random.uniform(-30, 30), np.random.uniform(-30, 30))
-        if os.path.exists("input.wav"):
-            break  # Stop patrol if new voice command was recorded
-
 # Main Loop
 def main_loop():
     idle_timer = 0
@@ -170,9 +155,6 @@ def main_loop():
                 log_memory("Silence", "No response")
 
             cleanup()
-
-            if time.time() - last_interaction > 20:
-                behavior_tree_idle()  # Start idle behaviors after 20 sec
 
         except KeyboardInterrupt:
             print("🛑 Exiting loop.")

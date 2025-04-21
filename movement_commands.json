@@ -1,0 +1,10 @@
+{
+    "move": "Move",
+    "dance": "Dance",
+    "jump": "Jump",
+    "walk": "Walk",
+    "run": "Run",
+    "wave": "Wave",
+    "sit": "Sit",
+    "patrol": "Patrol"
+}

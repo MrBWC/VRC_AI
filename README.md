@@ -1,5 +1,5 @@
 # 🎮 VRChat AI Agent
-
+#IMPORTANT  THE PROJEKT IS ON PAUSE RIGHT NOW!
 This project creates an AI-powered virtual character for **VRChat** — capable of listening, thinking, speaking, and even moving — using a combination of modern AI tools.
 
 ---
